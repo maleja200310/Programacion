@@ -2,7 +2,7 @@
 Console.WriteLine("Hello, World!");
 
 var persona = new Personas();
-Personas persona1 = new Personas();
+Personas persona1 = new Personas();     //instancias
 Personas persona2 = new Estudiantes();
 
 persona.Id = 1;
@@ -14,7 +14,7 @@ persona.VideoJuegos = new List<VideoJuegos>();
 persona.VideoJuegos.Add(new VideoJuegos() { Id = 1, Nombre = "LOZ 2025" });
 persona.VideoJuegos.Add(new VideoJuegos() { Id = 2, Nombre = "Tetrix" });
 
-Console.WriteLine(persona.Nombre);
+Console.WriteLine(persona.Nombre);    //Mostrar
 Console.WriteLine(persona.Tipo.Nombre);
 
 foreach (var elemento in persona.VideoJuegos)
@@ -26,6 +26,8 @@ public class Tipos
 {
     public int Id = 0;
     public String? Nombre = "";
+
+    public List<Personas>? Personas;
 }
 
 public class VideoJuegos
@@ -45,7 +47,7 @@ public class Personas
     public List<VideoJuegos> VideoJuegos = new List<VideoJuegos>();
 }
 
-public class Estudiantes : Personas
+public class Estudiantes : Personas     //Herencia
 {
     public String? Carnet = "";
 }
