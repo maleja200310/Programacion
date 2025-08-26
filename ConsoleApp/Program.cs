@@ -47,7 +47,44 @@ public class Personas
     public List<VideoJuegos> VideoJuegos = new List<VideoJuegos>();
 }
 
-public class Estudiantes : Personas     //Herencia
+public interface IEstudiantes
+{
+    bool Matricula();
+}
+
+public interface ISeguros
+{
+    decimal SeguroDeVida(string Nombre);
+}
+
+public interface IRestaurante
+{
+    bool Desayuno();
+    bool Almuerzo();
+
+}
+
+public class Estudiantes : Personas, IEstudiantes, ISeguros, IRestaurante     //Herencia
 {
     public String? Carnet = "";
+
+    public bool Matricula()
+    {
+        return true;
+    }
+
+    public decimal SeguroDeVida(string Nombre)
+    {
+        return 0.0m;
+    }
+
+    public bool Desayuno()
+    {
+        return false;
+    }
+
+    public bool Almuerzo()
+    {
+        return true;
+    }
 }
